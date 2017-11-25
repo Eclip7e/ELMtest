@@ -8,17 +8,21 @@ nInputs = 30;
 nHidden    = 1:50:1000;
 trainR2   = zeros(size(nHidden));
 testR2   = zeros(size(nHidden));
+trainTimes = 1:numel(nHidden);
 for i = 1 : numel(nHidden)
     ELM = ELM_Class(nInputs,nHidden(i),6,actFun,1);
     % train ELM on the training dataset
+    tic;
     ELM = train(ELM,Xtrain,Ytrain);
+    trainTimes(i)=toc;
     Yhat = predict(ELM,Xtrain);
     trainR2(i) = ComputeR2(Ytrain(:,2:end-1),Yhat(:,2:end-1));
     % validation of ELM model
     Yhat = predict(ELM,Xtest);
     testR2(i) = ComputeR2(Ytest(:,2:end-1),Yhat(:,2:end-1));
+    
 end
-
+sprintf('Training time of %d networks with different number of Hidden Neurons :%0.5f',numel(nHidden),sum(trainTimes))
 % plot results
 plot(nHidden,[trainR2;testR2],'-o');
 xlabel('Number of Hidden Neurons');
