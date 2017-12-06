@@ -5,7 +5,7 @@ X=ParseCSV('unixdates.csv');
 
 actFun='sig';
 nInputs = 30;
-nHidden    = 1:50:1000;
+nHidden    = 1:50:75000;
 trainR2   = zeros(size(nHidden));
 testR2   = zeros(size(nHidden));
 trainTimes = 1:numel(nHidden);
