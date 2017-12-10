@@ -45,6 +45,9 @@ classdef ELM_Class
          end
         end
         
+        function num = getnumofOutdays(obj)
+            num = obj.nOutputs;
+        end
         function obj = train(obj,X,Y)
             %METHOD1 Summary of this method goes here
             %   Detailed explanation goes here
