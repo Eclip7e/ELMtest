@@ -41,7 +41,7 @@ ylabel('Mean square error');
 legend({'training','testing'},'Location','southeast')
 
  figure
- plot(1:size(trainTimes,2),trainTimes);
+ plot(nHidden,trainTimes,'-o');
  title('Training time(s) vs number of hidden neurons');
  xlabel('Number of hidden neurons'); % x-axis label
  ylabel('Training time');
