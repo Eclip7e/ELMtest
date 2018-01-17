@@ -55,7 +55,8 @@ classdef ELM_Class
             X= [(ones(size(X,1),1)*obj.bias) X];
             obj.IW= randInitializeWeights(obj.nInputs*obj.nFeatures, obj.nHidden);
             obj.H = obj.actFun(X * obj.IW');
-            obj.H = [ones(size(obj.H,1),1) obj.H];
+            %removed bias from hidden layer its not needed
+            %obj.H = [ones(size(obj.H,1),1) obj.H];
             obj.Betha = pinv(obj.H)*Y;
         end
         
@@ -65,7 +66,8 @@ classdef ELM_Class
             %adding bias neuron 
             X= [(ones(size(X,1),1)*obj.bias) X];
             Hi = obj.actFun(X * obj.IW');
-            Hi = [ones(size(Hi,1),1) Hi];
+           %removed bias from hidden layer its not needed
+           % Hi = [ones(size(Hi,1),1) Hi];
             Y = Hi * obj.Betha;
         end
         
@@ -78,6 +80,9 @@ classdef ELM_Class
                 %flip X upside down so that latest dates are first
                 X=flipud(X);
                 outY=[];
+                %transposing X so later in for loop we can treat entire
+                %matrix as 1 row in row major order, otherwise it would be
+                %in column major order.
                 XT=X';
                 %its defacto obj.nFeatures
                 ncols=size(X,2);
