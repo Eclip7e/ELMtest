@@ -1,11 +1,8 @@
 % %% sensitivity analysis on number of hidden neurons
 X=ParseCSV('unixdates.csv');
-%[X,Y] = rearrangingData6feat(X);
-%[Xtest,Ytest,Xtrain,Ytrain] = setProportionsOfData(X,Y,80);
 
 %truncating X dates and volume not needed
 X=X(:,2:end-1);
-
 actFun='linear';
 nInputs = 30;
 nOutputs = 10;
@@ -23,6 +20,7 @@ for i = 1 : numel(nHidden)
     [oX,oY]=rearrangeData(ELM,X);
     [Xtest,Ytest,Xtrain,Ytrain] = setProportionsOfData(oX,oY,80);
     % train ELM on the training dataset
+    
     tic;
     ELM = train(ELM,Xtrain,Ytrain);
     trainTimes(i)=toc;
