@@ -1,8 +1,7 @@
 % %% sensitivity analysis on different number of predicted days with 30 days as input.
 X=ParseCSV('unixdates.csv');
 
-%truncating X dates and volume not needed
-X=X(:,2:end-1);
+
 actFun='linear';
 nInputs = 30;
 nOutputs = 1:40;

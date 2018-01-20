@@ -1,8 +1,7 @@
 % %% sensitivity analysis on different number of input days with 5 days output.
 X=ParseCSV('unixdates.csv');
 
-%truncating X dates and volume not needed
-X=X(:,2:end-1);
+
 actFun='linear';
 nInputs = 1:40;
 nOutputs = 5;

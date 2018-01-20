@@ -1,8 +1,7 @@
 % %% sensitivity analysis on number of hidden neurons
-X=ParseCSV('unixdates.csv');
+X=ParseCSV('daily_KO.csv');
 
-%truncating X dates and volume not needed
-X=X(:,2:end-1);
+
 actFun='linear';
 nInputs = 30;
 nOutputs = 10;
