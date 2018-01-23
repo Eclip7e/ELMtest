@@ -1,6 +1,8 @@
 classdef ELM_Class
     %ELM_CLASS Summary of this class goes here
     %   Detailed explanation goes here
+    %Author: Mateusz Grossman
+    %Date: 07/01/2018
     
     properties
         nInputs         % number of input days

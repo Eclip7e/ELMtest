@@ -1,5 +1,8 @@
+ %Author: Mateusz Grossman
+    %Date: 07/01/2018
 % %% sensitivity analysis on number of hidden neurons
-X=ParseCSV('daily_KO.csv');
+%X=ParseCSV('daily_KO.csv');
+X=ParseCSV('daily_EA.csv');
 
 
 actFun='linear';

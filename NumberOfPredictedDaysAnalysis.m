@@ -1,13 +1,15 @@
+ %Author: Mateusz Grossman
+    %Date: 07/01/2018
 % %% sensitivity analysis on different number of predicted days with 30 days as input.
-X=ParseCSV('unixdates.csv');
-
+%X=ParseCSV('daily_KO.csv');
+X=ParseCSV('daily_IBM.csv');
 
 actFun='linear';
 nInputs = 30;
 nOutputs = 1:40;
 nFeatures = size(X,2);
 bias = 1;
-nHidden    =nInputs*nFeatures+nOutputs*nFeatures;
+nHidden    =zeros(1,40)+200 ;%nInputs*nFeatures+nOutputs*nFeatures;
 trainMSE   = zeros(size(nHidden));
 testMSE   = zeros(size(nHidden));
 trainTimes = 1:numel(nOutputs);

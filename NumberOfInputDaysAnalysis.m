@@ -1,5 +1,8 @@
+ %Author: Mateusz Grossman
+    %Date: 07/01/2018
 % %% sensitivity analysis on different number of input days with 5 days output.
-X=ParseCSV('unixdates.csv');
+%X=ParseCSV('daily_KO.csv');
+X=ParseCSV('daily_IBM.csv');
 
 
 actFun='linear';

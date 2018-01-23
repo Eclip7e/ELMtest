@@ -1,3 +1,5 @@
+ %Author: Mateusz Grossman
+    %Date: 07/01/2018
 function  plotComparison(pred,realval)
 %PLOTOPENCOMPARISON Summary of this function goes here
 %   Detailed explanation goes here

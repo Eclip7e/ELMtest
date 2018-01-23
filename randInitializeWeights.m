@@ -1,3 +1,5 @@
+%Function taken from Andrew's NG machine learning course that I did while
+%learning about machine learning.
 function W = randInitializeWeights(L_in, L_out)
 %RANDINITIALIZEWEIGHTS Randomly initialize the weights of a layer with L_in
 %incoming connections and L_out outgoing connections
